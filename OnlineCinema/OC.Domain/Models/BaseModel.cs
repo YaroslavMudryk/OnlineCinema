@@ -17,9 +17,9 @@ namespace OC.Domain.Models
 
     public class BaseEditModel : BaseCreateModel
     {
-        public DateTime? UpdatedAt { get; set; }
-        public string UpdatedBy { get; set; }
-        public string UpdatedFromIP { get; set; }
+        public DateTime? LastUpdatedAt { get; set; }
+        public string LastUpdatedBy { get; set; }
+        public string LastUpdatedFromIP { get; set; }
     }
 
     public class BaseModel : BaseEditModel
