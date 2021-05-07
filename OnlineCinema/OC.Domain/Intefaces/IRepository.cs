@@ -15,8 +15,8 @@ namespace OC.Domain.Intefaces
         Task<T> FindByIdAsync(object id);
         Task<List<T>> GetAllAsync(bool isTracking = false);
         Task<List<T>> GetAllAsync(int offset, int count, bool isTracking = false);
-        Task<long> CountAsync(bool isTracking = false);
-        Task<long> CountAsync(Expression<Func<T, bool>> match, bool isTracking = false);
+        Task<long> CountAsync();
+        Task<long> CountAsync(Expression<Func<T, bool>> match);
         Task<List<T>> GetListAsync(Expression<Func<T, bool>> match, bool isTracking = false);
         Task<T> GetFirstAsync(Expression<Func<T, bool>> match, bool isTracking = false);
         Task<T> GetForEditAsync(Expression<Func<T, bool>> match);

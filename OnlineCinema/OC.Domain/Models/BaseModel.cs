@@ -15,7 +15,7 @@ namespace OC.Domain.Models
         public string CreatedFromIP { get; set; }
     }
 
-    public class BaseEditModel
+    public class BaseEditModel : BaseCreateModel
     {
         public DateTime? UpdatedAt { get; set; }
         public string UpdatedBy { get; set; }
