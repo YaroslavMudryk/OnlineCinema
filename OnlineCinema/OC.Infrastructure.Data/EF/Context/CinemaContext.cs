@@ -11,5 +11,12 @@ namespace OC.Infrastructure.Data.EF.Context
     public class CinemaContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+
+        public CinemaContext(DbContextOptions<CinemaContext> options) : base(options) { }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("");
+        }
     }
 }
