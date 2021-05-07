@@ -16,7 +16,7 @@ namespace OC.Infrastructure.Data.EF.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=CinemaDb;Trusted_Connection=True;");
         }
     }
 }

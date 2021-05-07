@@ -20,6 +20,15 @@ namespace OC.Application.Services.Implementations
             _mapper = mapper;
         }
 
+        public async Task<Result> GetAllUsersAsync()
+        {
+            var usersFromDb = await _userRepository.GetAllAsync();
+            if (usersFromDb is null)
+                return new Result("Users not found");
+            var usersForView = _mapper.Map<List<UserViewModel>>(usersFromDb);
+            return new Result(usersForView);
+        }
+
         public async Task<Result> GetUserByIdAsync(int id)
         {
             var userFromDb = await _userRepository.GetFirstAsync(d => d.Id == id);

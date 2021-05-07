@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OC.Infrastructure.IoC", "OC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OC.Application", "OC.Application\OC.Application.csproj", "{3DA38C91-5B46-4E01-BB7F-4A084D8720FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OC.Web", "OC.Web\OC.Web.csproj", "{9C09D1F8-CBA3-4AE3-8995-436F72FE98D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3DA38C91-5B46-4E01-BB7F-4A084D8720FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DA38C91-5B46-4E01-BB7F-4A084D8720FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DA38C91-5B46-4E01-BB7F-4A084D8720FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C09D1F8-CBA3-4AE3-8995-436F72FE98D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C09D1F8-CBA3-4AE3-8995-436F72FE98D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C09D1F8-CBA3-4AE3-8995-436F72FE98D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C09D1F8-CBA3-4AE3-8995-436F72FE98D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

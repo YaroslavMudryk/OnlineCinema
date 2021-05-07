@@ -8,6 +8,7 @@ namespace OC.Application.Services.Intefaces
 {
     public interface IUserService
     {
+        Task<Result> GetAllUsersAsync();
         Task<Result> GetUserByIdAsync(int id);
         Task<Result> SearchUsersAsync(string name, int afterId = 0);
     }
