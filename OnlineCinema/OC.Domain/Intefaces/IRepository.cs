@@ -19,6 +19,7 @@ namespace OC.Domain.Intefaces
         Task<long> CountAsync(Expression<Func<T, bool>> match, bool isTracking = false);
         Task<List<T>> GetListAsync(Expression<Func<T, bool>> match, bool isTracking = false);
         Task<T> GetFirstAsync(Expression<Func<T, bool>> match, bool isTracking = false);
+        Task<T> GetForEditAsync(Expression<Func<T, bool>> match);
         void Dispose();
     }
 }
