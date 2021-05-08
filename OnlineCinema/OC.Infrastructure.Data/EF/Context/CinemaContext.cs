@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OC.Domain.Models;
+using OC.Infrastructure.Data.EF.Configurations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,11 @@ namespace OC.Infrastructure.Data.EF.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=CinemaDb;Trusted_Connection=True;");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using OC.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace OC.Infrastructure.Data.EF.Configurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
@@ -15,10 +10,10 @@ namespace OC.Infrastructure.Data.EF.Configurations
             builder.HasKey(x => x.Id);
             builder.HasIndex(x => new
             {
-                x.Username,
                 x.Name,
                 x.CreatedAt
             });
+            builder.HasIndex(x => x.Username).IsUnique();
         }
     }
 }
