@@ -2,15 +2,11 @@
 
 namespace OC.Application.ViewModels.Authentications
 {
-    public class RestorePasswordModel
+    public class LoginPasswordModel
     {
         [Required, MinLength(5), MaxLength(200)]
         public string Login { get; set; }
         [Required, RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")]
-        public string NewPassword { get; set; }
-        [Required, Compare("NewPassword")]
-        public string ConfirmNewPassword { get; set; }
-        [Required, MinLength(6), MaxLength(6)]
-        public string Code { get; set; }
+        public string Password { get; set; }
     }
 }

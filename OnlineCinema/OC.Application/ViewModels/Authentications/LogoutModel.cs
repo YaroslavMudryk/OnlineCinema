@@ -8,5 +8,6 @@ namespace OC.Application.ViewModels.Authentications
 {
     public class LogoutModel
     {
+
     }
 }

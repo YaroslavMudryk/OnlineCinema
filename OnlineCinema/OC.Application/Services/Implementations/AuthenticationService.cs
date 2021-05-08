@@ -26,41 +26,5 @@ namespace OC.Application.Services.Implementations
             _userSessionRepository = userSessionRepository;
             _userRepository = userRepository;
         }
-
-
-        public async Task<ChangePasswordViewModel> ChangePasswordAsync(ChangePasswordModel changePasswordModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<LoginViewModel> LoginByPasswordAsync(LoginModel loginModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<LoginViewModel> LoginByQrCodeAsync(LoginModel loginModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<LogoutViewModel> LogoutAsync(LogoutModel logoutModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<LogoutViewModel> LogoutOnDeviceAsync(LogoutModel logoutModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<RegisterViewModel> RegisterAsync(RegisterModel registerModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<RestorePasswordViewModel> RestoreAsync(RestorePasswordModel restorePasswordModel)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

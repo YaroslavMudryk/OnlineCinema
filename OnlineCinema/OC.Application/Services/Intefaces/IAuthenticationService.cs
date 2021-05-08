@@ -8,10 +8,11 @@ namespace OC.Application.Services.Intefaces
 {
     public interface IAuthenticationService
     {
-        Task<LoginViewModel> LoginByPasswordAsync(LoginModel loginModel);
-        Task<LoginViewModel> LoginByQrCodeAsync(LoginModel loginModel);
+        Task<LoginViewModel> LoginByPasswordAsync(LoginPasswordModel loginModel);
+        Task<LoginViewModel> LoginByQrCodeAsync(LoginQrCodeModel loginModel);
         Task<RegisterViewModel> RegisterAsync(RegisterModel registerModel);
         Task<ChangePasswordViewModel> ChangePasswordAsync(ChangePasswordModel changePasswordModel);
+        Task<RestorePasswordViewModel> SendCodeForRestoreAsync(RestorePasswordCodeModel restorePasswordModel);
         Task<RestorePasswordViewModel> RestoreAsync(RestorePasswordModel restorePasswordModel);
         Task<LogoutViewModel> LogoutAsync(LogoutModel logoutModel);
         Task<LogoutViewModel> LogoutOnDeviceAsync(LogoutModel logoutModel);
