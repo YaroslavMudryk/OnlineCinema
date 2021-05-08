@@ -12,5 +12,6 @@ namespace OC.Domain.Models
         public string Avatar { get; set; }
         public List<UserLogin> UserLogins { get; set; }
         public List<UserSession> UserSessions { get; set; }
+        public List<UserRestore> UserRestores { get; set; }
     }
 }

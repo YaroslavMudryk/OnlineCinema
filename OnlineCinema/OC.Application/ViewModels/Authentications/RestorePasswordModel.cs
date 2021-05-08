@@ -10,7 +10,7 @@ namespace OC.Application.ViewModels.Authentications
         public string NewPassword { get; set; }
         [Required, Compare("NewPassword")]
         public string ConfirmNewPassword { get; set; }
-        [Required, MinLength(6), MaxLength(6)]
+        [Required, MinLength(8), MaxLength(8)]
         public string Code { get; set; }
     }
 }

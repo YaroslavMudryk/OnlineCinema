@@ -18,6 +18,7 @@ namespace OC.Infrastructure.IoC
             services.AddScoped<IUserRoleRepository, EFUserRoleRepository>();
             services.AddScoped<IUserSessionRepository, EFUserSessionRepository>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IUserRestoreRepository, UserRestoreRepository>();
         }
 
         public static void AddOnlineCinemaAutoMapper(this IServiceCollection services)
