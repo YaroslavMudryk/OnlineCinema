@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 namespace OC.Domain.Models
 {
     public class User : BaseModel<int>
@@ -9,5 +10,6 @@ namespace OC.Domain.Models
         public string Username { get; set; }
         [MinLength(5), MaxLength(500)]
         public string Avatar { get; set; }
+        public List<UserLogin> UserLogins { get; set; }
     }
 }
