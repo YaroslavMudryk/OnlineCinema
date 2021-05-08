@@ -3,8 +3,8 @@ using OC.Domain.Models;
 using OC.Infrastructure.Data.EF.Context;
 namespace OC.Infrastructure.Data.Repositories.EF
 {
-    public class UserLoginRepository : Repository<UserLogin>, IUserLoginRepository
+    public class EFUserRoleRepository : EFRepository<UserRole>, IUserRoleRepository
     {
-        public UserLoginRepository(CinemaContext db) : base(db) { }
+        public EFUserRoleRepository(CinemaContext db) : base(db) { }
     }
 }

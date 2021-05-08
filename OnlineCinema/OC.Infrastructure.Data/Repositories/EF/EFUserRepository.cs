@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace OC.Infrastructure.Data.Repositories.EF
 {
-    public class UserRepository : Repository<User>, IUserRepository
+    public class EFUserRepository : EFRepository<User>, IUserRepository
     {
-        public UserRepository(CinemaContext db) : base(db) { }
+        public EFUserRepository(CinemaContext db) : base(db) { }
 
         public async Task<List<User>> SearchUsersAsync(string name, int afterId)
         {

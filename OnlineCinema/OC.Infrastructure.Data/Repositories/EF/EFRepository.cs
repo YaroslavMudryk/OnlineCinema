@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace OC.Infrastructure.Data.Repositories.EF
 {
-    public class Repository<T> : IRepository<T> where T : BaseModel
+    public class EFRepository<T> : IRepository<T> where T : BaseModel
     {
         protected CinemaContext _db;
 
-        public Repository(CinemaContext db)
+        public EFRepository(CinemaContext db)
         {
             _db = db;
         }

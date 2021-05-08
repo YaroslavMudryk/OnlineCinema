@@ -11,8 +11,13 @@ namespace OC.Infrastructure.IoC
     {
         public static void AddCinemaServices(this IServiceCollection services)
         {
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserRepository, EFUserRepository>();
             services.AddScoped<IUserService, UserService>();
+
+            services.AddScoped<IRoleRepository, EFRoleRepository>();
+            services.AddScoped<IUserLoginRepository, EFUserLoginRepository>();
+            services.AddScoped<IUserRoleRepository, EFUserRoleRepository>();
+            services.AddScoped<IUserSessionRepository, EFUserSessionRepository>();
         }
     }
 }
