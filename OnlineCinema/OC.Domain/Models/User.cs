@@ -11,5 +11,6 @@ namespace OC.Domain.Models
         [MinLength(5), MaxLength(500)]
         public string Avatar { get; set; }
         public List<UserLogin> UserLogins { get; set; }
+        public List<UserSession> UserSessions { get; set; }
     }
 }
