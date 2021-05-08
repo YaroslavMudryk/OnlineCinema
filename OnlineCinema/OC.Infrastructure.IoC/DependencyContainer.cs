@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 using OC.Application.Services.Implementations;
 using OC.Application.Services.Intefaces;
+using OC.Application.ViewModels;
 using OC.Domain.Intefaces;
 using OC.Infrastructure.Data.Repositories.EF;
-using System;
-
 namespace OC.Infrastructure.IoC
 {
     public static class DependencyContainer
@@ -18,6 +18,16 @@ namespace OC.Infrastructure.IoC
             services.AddScoped<IUserLoginRepository, EFUserLoginRepository>();
             services.AddScoped<IUserRoleRepository, EFUserRoleRepository>();
             services.AddScoped<IUserSessionRepository, EFUserSessionRepository>();
+        }
+
+        public static void AddOnlineCinemaAutoMapper(this IServiceCollection services)
+        {
+            var mappingConfig = new MapperConfiguration(mapConfiguration =>
+            {
+                mapConfiguration.AddProfile(new MapperConfig());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OC.Application.Results;
 
 namespace OC.Web.Controllers.API
 {
@@ -9,6 +10,22 @@ namespace OC.Web.Controllers.API
         public IActionResult Index()
         {
             return Ok($"{HttpContext.Request.Path.Value} {HttpContext.Connection.RemoteIpAddress}");
+        }
+
+        protected IActionResult Result(object data)
+        {
+            if (data != null)
+                return ResultOk(data);
+            return ResultNotFound(data);
+        }
+
+        private IActionResult ResultOk(object data)
+        {
+            return Ok(data);
+        }
+        private IActionResult ResultNotFound(object data)
+        {
+            return Ok(data);
         }
     }
 }

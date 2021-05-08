@@ -1,16 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OC.Infrastructure.Data.EF.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using OC.Infrastructure.IoC;
 
 namespace OC.Web
 {
@@ -25,11 +21,9 @@ namespace OC.Web
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<CinemaContext>(option => option.UseSqlServer(connection), ServiceLifetime.Transient);
-            //services.AddControllers(options =>
-            //{
-            //    options.Filters.Add(new ModelStateValidatorAttribute());
-            //});
+            services.AddDbContext<CinemaContext>(option => option.UseSqlServer(connection));
+            services.AddCinemaServices();
+            services.AddOnlineCinemaAutoMapper();
             services.AddApiVersioning(config =>
             {
                 config.DefaultApiVersion = new ApiVersion(1, 0);

@@ -21,9 +21,16 @@ namespace OC.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var result = await _userService.GetAllUsersAsync();
+            return View(result.Data);
+        }
+
+        [HttpGet("user/{id}")]
+        public async Task<IActionResult> GetUserById(int id)
+        {
+            var result = await _userService.GetUserByIdAsync(id);
             if (result.IsOK)
-                return View(result.Data as List<UserViewModel>);
-            return View(null);
+                return View(result.Data);
+            return NotFound(result.Error);
         }
     }
 }

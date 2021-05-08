@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using OC.Application.Results;
+using OC.Application.Results.Users;
 using OC.Application.Services.Intefaces;
 using OC.Application.ViewModels.Users;
 using OC.Domain.Intefaces;
@@ -20,31 +21,31 @@ namespace OC.Application.Services.Implementations
             _mapper = mapper;
         }
 
-        public async Task<Result> GetAllUsersAsync()
+        public async Task<UserListResult> GetAllUsersAsync()
         {
             var usersFromDb = await _userRepository.GetAllAsync();
             if (usersFromDb is null)
-                return new Result("Users not found");
+                return new UserListResult("Users not found");
             var usersForView = _mapper.Map<List<UserViewModel>>(usersFromDb);
-            return new Result(usersForView);
+            return new UserListResult(usersForView);
         }
 
-        public async Task<Result> GetUserByIdAsync(int id)
+        public async Task<UserResult> GetUserByIdAsync(int id)
         {
             var userFromDb = await _userRepository.GetFirstAsync(d => d.Id == id);
             if (userFromDb is null)
-                return new Result("User by id not found");
+                return new UserResult("User by id not found");
             var userForView = _mapper.Map<UserViewModel>(userFromDb);
-            return new Result(userForView);
+            return new UserResult(userForView);
         }
 
-        public async Task<Result> SearchUsersAsync(string name, int afterId = 0)
+        public async Task<UserListResult> SearchUsersAsync(string name, int afterId = 0)
         {
             var usersFromDb = await _userRepository.SearchUsersAsync(name, afterId);
             if (usersFromDb is null)
-                return new Result("Users by name not found");
+                return new UserListResult("Users by name not found");
             var usersForView = _mapper.Map<List<UserViewModel>>(usersFromDb);
-            return new Result(usersForView);
+            return new UserListResult(usersForView);
         }
     }
 }

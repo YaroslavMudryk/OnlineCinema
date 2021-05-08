@@ -1,4 +1,5 @@
 ﻿using OC.Application.Results;
+using OC.Application.Results.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,8 @@ namespace OC.Application.Services.Intefaces
 {
     public interface IUserService
     {
-        Task<Result> GetAllUsersAsync();
-        Task<Result> GetUserByIdAsync(int id);
-        Task<Result> SearchUsersAsync(string name, int afterId = 0);
+        Task<UserListResult> GetAllUsersAsync();
+        Task<UserResult> GetUserByIdAsync(int id);
+        Task<UserListResult> SearchUsersAsync(string name, int afterId = 0);
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OC.Application.Results
+﻿namespace OC.Application.Results
 {
     public class Result
     {
@@ -29,8 +23,32 @@ namespace OC.Application.Results
                 Data = null;
             }
         }
-        public bool IsOK { get; set; } = true;
-        public string Error { get; set; } = null;
-        public object Data { get; set; } = 0;
+        public bool IsOK { get; set; }
+        public string Error { get; set; }
+        public object Data { get; set; }
+    }
+
+    public class Result<T>
+    {
+        public Result(T data)
+        {
+            if(data == null)
+            {
+                IsOK = false;
+                Error = "Resourse not found";
+                return;
+            }
+            Data = data;
+            IsOK = true;
+            Error = null;
+        }
+        public Result(string error)
+        {
+            IsOK = false;
+            Error = error;
+        }
+        public bool IsOK { get; set; }
+        public string Error { get; set; }
+        public T Data { get; set; }
     }
 }
