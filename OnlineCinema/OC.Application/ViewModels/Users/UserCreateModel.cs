@@ -6,7 +6,7 @@ namespace OC.Application.ViewModels.Users
     {
         [Required, MinLength(5), MaxLength(200)]
         public string Login { get; set; }
-        [Required]
+        [Required, RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")]
         public string Password { get; set; }
         [Required, MinLength(2), MaxLength(150)]
         public string Name { get; set; }
