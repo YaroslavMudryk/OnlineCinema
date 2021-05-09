@@ -10,6 +10,7 @@ namespace OC.Domain.Models
     {
         [Required, MaxLength(50)]
         public string Name { get; set; }
-        public string Priority { get; set; }
+        [Required]
+        public int Priority { get; set; }
     }
 }

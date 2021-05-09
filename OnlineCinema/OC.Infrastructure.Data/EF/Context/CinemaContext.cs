@@ -22,6 +22,11 @@ namespace OC.Infrastructure.Data.EF.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new UserLoginConfiguration());
+            modelBuilder.ApplyConfiguration(new UserRestoreConfiguration());
+            modelBuilder.ApplyConfiguration(new UserRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new UserSessionConfiguration());
         }
     }
 }

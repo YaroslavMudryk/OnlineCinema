@@ -8,6 +8,7 @@ namespace OC.Domain.Models
         public string Login { get; set; }
         [Required, MaxLength(2500)]
         public string PasswordHash { get; set; }
+        [Required]
         public bool IsActive { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
