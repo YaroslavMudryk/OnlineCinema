@@ -45,6 +45,11 @@ namespace OC.Application.Services.Implementations
             throw new NotImplementedException();
         }
 
+        public async Task<TokenViewModel> LoginTokenAsync(LoginPasswordModel loginModel)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<LogoutViewModel> LogoutAsync(LogoutModel logoutModel)
         {
             throw new NotImplementedException();
