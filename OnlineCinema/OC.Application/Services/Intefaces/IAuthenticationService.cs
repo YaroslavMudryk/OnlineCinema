@@ -10,6 +10,7 @@ namespace OC.Application.Services.Intefaces
     {
         Task<LoginViewModel> LoginByPasswordAsync(LoginPasswordModel loginModel);
         Task<LoginViewModel> LoginByQrCodeAsync(LoginQrCodeModel loginModel);
+        Task<TokenViewModel> LoginTokenAsync(LoginPasswordModel loginModel);
         Task<RegisterViewModel> RegisterAsync(RegisterModel registerModel);
         Task<ChangePasswordViewModel> ChangePasswordAsync(ChangePasswordModel changePasswordModel);
         Task<RestorePasswordViewModel> SendCodeForRestoreAsync(RestorePasswordCodeModel restorePasswordModel);
