@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace OC.Domain.Models
@@ -17,6 +18,7 @@ namespace OC.Domain.Models
         [Required]
         public bool IsAdult { get; set; }
         public string TrailerUrl { get; set; }
-        public string FilmUrl { get; set; }
+        public string VideoUrl { get; set; }
+        public List<Series> Series { get; set; }
     }
 }

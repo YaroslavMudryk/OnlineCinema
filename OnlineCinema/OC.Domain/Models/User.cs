@@ -13,5 +13,6 @@ namespace OC.Domain.Models
         public List<UserLogin> UserLogins { get; set; }
         public List<UserSession> UserSessions { get; set; }
         public List<UserRestore> UserRestores { get; set; }
+        public List<MovieComment> Comments { get; set; }
     }
 }
